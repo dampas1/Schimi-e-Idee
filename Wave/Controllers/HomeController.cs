@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Wave.Models;
+using Wave.Models.ViewModels.Login;
 
 namespace Wave.Controllers
 {
@@ -32,6 +33,21 @@ namespace Wave.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public void Login(LoginModel login)
+        {
+            if(ModelState.IsValid)
+            {
+
+            }
         }
     }
 }
